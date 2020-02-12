@@ -158,6 +158,9 @@ static MouseShortcut mshortcuts[] = {
 static char *openurlcmd[] = { "/bin/sh", "-c",
     "xurls | dmenu -l 10 -i -w $WINDOWID -fn 'inconsolata:size=13' -nb '#fdf6e3' -nf '#657b83' -sb '#eee8d5' -sf '#657b83' | xargs url_handler.sh", NULL };
 
+static char *copyurlcmd[] = { "/bin/sh", "-c",
+    "xurls | dmenu -l 10 -i -w $WINDOWID -fn 'inconsolata:size=13' -nb '#fdf6e3' -nf '#657b83' -sb '#eee8d5' -sf '#657b83' | xclip -r -selection clipboard", NULL };
+
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
@@ -173,10 +176,10 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_U,           externalpipe,   {.v =  openurlcmd } },
+	{ TERMMOD,              XK_Y,           externalpipe,   {.v =  copyurlcmd } },
 };
 
 /*
