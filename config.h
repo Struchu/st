@@ -160,7 +160,7 @@ static MouseShortcut mshortcuts[] = {
  * Extra commands.
  */
 static char *openurlcmd[] = { "/bin/sh", "-c",
-    "xurls | dmenu -l 10 -i -w $WINDOWID -fn 'inconsolata:size=13' -nb '#fdf6e3' -nf '#657b83' -sb '#eee8d5' -sf '#657b83' | xargs url_handler.sh", NULL };
+    "xurls | dmenu -l 10 -i -w $WINDOWID -fn 'inconsolata:size=13' -nb '#fdf6e3' -nf '#657b83' -sb '#eee8d5' -sf '#657b83' | xargs url_handler", NULL };
 
 static char *copyurlcmd[] = { "/bin/sh", "-c",
     "xurls | dmenu -l 10 -i -w $WINDOWID -fn 'inconsolata:size=13' -nb '#fdf6e3' -nf '#657b83' -sb '#eee8d5' -sf '#657b83' | xclip -r -selection clipboard", NULL };
